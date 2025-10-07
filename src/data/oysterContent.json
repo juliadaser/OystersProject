@@ -1,0 +1,75 @@
+{
+  "1600": {
+    "subheading": "Thriving Ecosystem",
+    "content": {
+      "text1": "There were 220,000 acres of oyster reefs.",
+      "text2": "Whales, dolphins, seals, seahorses, herring, striped bass, and hundreds of other species in the Harbor enjoy the benefits of the oyster reefs.",
+      "text3": "This ecosystem sustained the local Lenape people for generations.",
+      "text4": "At this point in time, New York Harbor was one of the most diverse and dynamic environments on the planet."
+    },
+    "quiz": {
+      "question": "",
+      "options": {
+        "option1": "",
+        "option2": "",
+        "option3": "",
+        "option4": ""
+      }
+    }
+  },
+
+  "1715 - 1807": {
+    "subheading": "Food and Oyster Laws",
+    "content": {
+      "text1": "New Yorkers are eating oysters, and lots of them.",
+      "text2": "This high demand leads to a conservation law that bans harvesting from NYC oyster reefs.",
+      "text3": "This allows the wild oyster population to replenish itself.",
+      "text4": "But this legislation only lasted till 1807."
+    },
+    "quiz": ""
+  },
+
+  "1833": {
+    "subheading": "Oyster Trade",
+    "content": {
+      "text1": "In 1833, Sandy Ground was founded on Staten Island by free African Americans after slavery was abolished in New York.",
+      "text2": "Skilled Black oystermen migrated from Maryland, bringing expertise in oyster harvesting.",
+      "text3": "They built thriving businesses, making Sandy Ground one of the oldest continuously settled Black communities in the U.S.",
+      "text4": "The oyster trade became central to both community prosperity and New York’s food culture."
+    },
+    "quiz": ""
+  },
+
+  "1849 - 1906": {
+    "subheading": "Pollution and Over-Harvesting",
+    "content": {
+      "text1": "By the mid-1800s, oyster beds were being overharvested to meet high demand.",
+      "text2": "At the same time, New York’s new Combined Sewer Overflow (CSO) system dumped raw sewage into the harbor. CSO is still in place today.",
+      "text3": "Pollution and overfishing left New York Harbor nearly lifeless by 1900.",
+      "text4": "The once-thriving ecosystem became known for filth and disease."
+    },
+    "quiz": ""
+  },
+
+  "1927 - 2010": {
+    "subheading": "Clean Water Act",
+    "content": {
+      "text1": "The last commercial oyster bed in New York closed in 1927.",
+      "text2": "In 1972, the Clean Water Act banned the dumping of untreated sewage into U.S. waters.",
+      "text3": "Over time, water quality in New York Harbor began to improve.",
+      "text4": "Oysters and other marine life slowly started to return."
+    },
+    "quiz": ""
+  },
+
+  "2014 - Now": {
+    "subheading": "Billion Oyster Project",
+    "content": {
+      "text1": "In 2014, the Billion Oyster Project was launched in New York",
+      "text2": "The goal: to restore one billion oysters to New York Harbor by 2035.",
+      "text3": "Recycled oyster shells from local restaurants are used to build new reefs.",
+      "text4": "These reefs create habitat for marine life and protect shorelines from storms."
+    },
+    "quiz": ""
+  }
+}

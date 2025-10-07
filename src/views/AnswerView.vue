@@ -1,6 +1,7 @@
 <script setup>
 import CategoryCarousel from '@/components/CategoryCarousel.vue'
 import { useRouter } from 'vue-router'
+
 const router = useRouter()
 
 const buttonPress = () => {
