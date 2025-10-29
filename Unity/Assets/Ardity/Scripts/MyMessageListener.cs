@@ -71,8 +71,6 @@ public class MyMessageListener : MonoBehaviour
             attractRole.text = "Hatchery Manager";
         }
 
-
-
     }
   
   
