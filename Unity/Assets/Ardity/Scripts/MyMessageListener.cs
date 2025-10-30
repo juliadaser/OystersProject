@@ -15,6 +15,8 @@ public class MyMessageListener : MonoBehaviour
     [SerializeField] TextMeshPro attractName;
     [SerializeField] TextMeshPro attractRole;
 
+    string oldMsg = "0";
+
     // Use this for initialization
     void Start()
     {
@@ -26,50 +28,47 @@ public class MyMessageListener : MonoBehaviour
     // Invoked when a line of data is received from the serial device.
     void OnMessageArrived(string msg)
     {
-        Debug.Log("Arrived: " + msg);
+     // Debug.Log("Arrived: " + msg + "  Oldmsg:" + oldMsg);
 
-        if (msg == "0")
+        if (msg == "0" && oldMsg != msg)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = attractSprite;
-            attractName.text = "";
-            attractRole.text = "";
+            attractName.GetComponent<TypewriterUI>().SetText("");
+
         }
 
-        if (msg == "1")
+        if (msg == "1" && oldMsg != msg)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = benSprite;
-            attractName.text = "Ben";
-            attractRole.text = "Hatchery Technician";
+            attractName.GetComponent<TypewriterUI>().SetText("Ben - Hatchery Technician");
 
         }
 
-        if (msg == "2")
+        if (msg == "2" && oldMsg != msg)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = danielleSprite;
-            attractName.text = "Danielle";
-            attractRole.text = "Director of Restoration";
+            attractName.GetComponent<TypewriterUI>().SetText("Danielle - Director of Restoration");
         }
 
-        if (msg == "3")
+        if (msg == "3" && oldMsg != msg)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = johnnySprite;
-            attractName.text = "Johnny";
-            attractRole.text = "Fabrication Coordinator";
+            attractName.GetComponent<TypewriterUI>().SetText("Johnny - Fabrication Coordinator");
         }
 
-        if (msg == "4")
+        if (msg == "4" && oldMsg != msg)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = khourySprite;
-            attractName.text = "Khoury";
-            attractRole.text = "Project Manager";
+            attractName.GetComponent<TypewriterUI>().SetText("Khoury - Project Manager");
         }
 
-        if (msg == "5")
+        if (msg == "5" && oldMsg != msg)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = rebeccaSprite;
-            attractName.text = "Rebecca";
-            attractRole.text = "Hatchery Manager";
+            attractName.GetComponent<TypewriterUI>().SetText("Rebecca - Hatchery Manager");
         }
+
+        oldMsg = msg;
 
     }
   
