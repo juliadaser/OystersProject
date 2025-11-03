@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.Video;
 using TMPro;
 
 public class MyMessageListener : MonoBehaviour
 {
-    [SerializeField] Sprite attractSprite;
+    //[SerializeField] Sprite attractSprite;
+    [SerializeField] UnityEngine.Video.VideoPlayer attractVideoPlayer;
     [SerializeField] Sprite benSprite;
     [SerializeField] Sprite danielleSprite;
     [SerializeField] Sprite johnnySprite;
@@ -38,20 +40,25 @@ public class MyMessageListener : MonoBehaviour
     // Invoked when a line of data is received from the serial device.
     void OnMessageArrived(string msg)
     {
+        SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
+
         // Debug.Log("Arrived: " + msg + "  Oldmsg:" + oldMsg);
 
         if (msg == "0" && oldMsg != msg)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = attractSprite;
+            // Show attract video
+            renderer.enabled = true;
+            attractVideoPlayer.Play();
+
+            // Clear text + stop audio
             attractName.GetComponent<TypewriterUI>().SetText("");
-
             StartAudioTransition(null);
-
         }
 
         if (msg == "1" && oldMsg != msg)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = benSprite;
+            StopAttractVideo();
+            renderer.sprite = benSprite;
             attractName.GetComponent<TypewriterUI>().SetText("Ben - Hatchery Technician");
 
             StartAudioTransition(clip_Ben);
@@ -59,34 +66,35 @@ public class MyMessageListener : MonoBehaviour
 
         if (msg == "2" && oldMsg != msg)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = danielleSprite;
+            StopAttractVideo();
+            renderer.sprite = danielleSprite;
             attractName.GetComponent<TypewriterUI>().SetText("Danielle - Director of Restoration");
-
 
             StartAudioTransition(clip_Danielle);
         }
 
         if (msg == "3" && oldMsg != msg)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = johnnySprite;
+            StopAttractVideo();
+            renderer.sprite = johnnySprite;
             attractName.GetComponent<TypewriterUI>().SetText("Johnny - Fabrication Coordinator");
-
 
             StartAudioTransition(clip_Johnny);
         }
 
         if (msg == "4" && oldMsg != msg)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = khourySprite;
+            StopAttractVideo();
+            renderer.sprite = khourySprite;
             attractName.GetComponent<TypewriterUI>().SetText("Khoury - Project Manager");
-
 
             StartAudioTransition(clip_Khoury);
         }
 
         if (msg == "5" && oldMsg != msg)
-        {;
-            gameObject.GetComponent<SpriteRenderer>().sprite = rebeccaSprite;
+        {
+            StopAttractVideo();
+            renderer.sprite = rebeccaSprite;
             attractName.GetComponent<TypewriterUI>().SetText("Rebecca - Hatchery Manager");
 
             StartAudioTransition(clip_Rebecca);
@@ -94,6 +102,15 @@ public class MyMessageListener : MonoBehaviour
 
         oldMsg = msg;
 
+    }
+
+
+    void StopAttractVideo()
+    {
+        if (attractVideoPlayer.isPlaying)
+        {
+            attractVideoPlayer.Stop();
+        }
     }
 
 
