@@ -42,7 +42,7 @@ public class MyMessageListener : MonoBehaviour
     {
         SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
 
-        // Debug.Log("Arrived: " + msg + "  Oldmsg:" + oldMsg);
+         Debug.Log("Arrived: " + msg + "  Oldmsg:" + oldMsg);
 
         if (msg == "0" && oldMsg != msg)
         {
