@@ -1,8 +1,8 @@
-const int buttonPin_1 = 5;
-const int buttonPin_2 = 6;
-const int buttonPin_3 = 7;
-const int buttonPin_4 = 8;
-const int buttonPin_5 = 9;
+const int buttonPin_1 = 5; // ben
+const int buttonPin_2 = 6; // danielle
+const int buttonPin_3 = 7; //johnny
+const int buttonPin_4 = 8; // khoury
+const int buttonPin_5 = 9; // rebecca
 
 int buttonVal_1 = 1;
 int buttonVal_2 = 1;

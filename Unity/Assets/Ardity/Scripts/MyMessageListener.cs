@@ -42,7 +42,7 @@ public class MyMessageListener : MonoBehaviour
     {
         SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
 
-         Debug.Log("Arrived: " + msg + "  Oldmsg:" + oldMsg);
+         //Debug.Log("Arrived: " + msg + "  Oldmsg:" + oldMsg);
 
         if (msg == "0" && oldMsg != msg)
         {
@@ -53,6 +53,8 @@ public class MyMessageListener : MonoBehaviour
             // Clear text + stop audio
             attractName.GetComponent<TypewriterUI>().SetText("");
             StartAudioTransition(null);
+
+            Debug.Log("Show attract video, clear text and stop audio");
         }
 
         if (msg == "1" && oldMsg != msg)
@@ -60,6 +62,7 @@ public class MyMessageListener : MonoBehaviour
             StopAttractVideo();
             renderer.sprite = benSprite;
             attractName.GetComponent<TypewriterUI>().SetText("Ben - Hatchery Technician");
+            Debug.Log("Ben");
 
             StartAudioTransition(clip_Ben);
         }
@@ -69,6 +72,7 @@ public class MyMessageListener : MonoBehaviour
             StopAttractVideo();
             renderer.sprite = danielleSprite;
             attractName.GetComponent<TypewriterUI>().SetText("Danielle - Director of Restoration");
+            Debug.Log("Danielle");
 
             StartAudioTransition(clip_Danielle);
         }
@@ -78,6 +82,7 @@ public class MyMessageListener : MonoBehaviour
             StopAttractVideo();
             renderer.sprite = johnnySprite;
             attractName.GetComponent<TypewriterUI>().SetText("Johnny - Fabrication Coordinator");
+            Debug.Log("Johnny");
 
             StartAudioTransition(clip_Johnny);
         }
@@ -87,6 +92,9 @@ public class MyMessageListener : MonoBehaviour
             StopAttractVideo();
             renderer.sprite = khourySprite;
             attractName.GetComponent<TypewriterUI>().SetText("Khoury - Project Manager");
+            Debug.Log("Khoury");
+            Debug.Log("Renderer enabled? " + renderer.enabled);
+            Debug.Log("Attract video renderer active? " + attractVideoPlayer.GetComponent<Renderer>().enabled);
 
             StartAudioTransition(clip_Khoury);
         }
@@ -96,6 +104,7 @@ public class MyMessageListener : MonoBehaviour
             StopAttractVideo();
             renderer.sprite = rebeccaSprite;
             attractName.GetComponent<TypewriterUI>().SetText("Rebecca - Hatchery Manager");
+            Debug.Log("Rebecca");
 
             StartAudioTransition(clip_Rebecca);
         }
@@ -110,6 +119,7 @@ public class MyMessageListener : MonoBehaviour
         if (attractVideoPlayer.isPlaying)
         {
             attractVideoPlayer.Stop();
+            Debug.Log("Stopping video player");
         }
     }
 
@@ -122,10 +132,10 @@ public class MyMessageListener : MonoBehaviour
     public void StartAudioTransition(AudioClip newClip)
     {
         // If a fade is already in progress, stop it immediately.
-        //if (activeAudioCoroutine != null)
-        //{
-        //    StopCoroutine(activeAudioCoroutine);
-        //}
+        if (activeAudioCoroutine != null)
+        {
+            StopCoroutine(activeAudioCoroutine);
+        }
 
         // Start the new transition and store a reference to it.
         activeAudioCoroutine = StartCoroutine(AudioTransitionCoroutine(newClip));
